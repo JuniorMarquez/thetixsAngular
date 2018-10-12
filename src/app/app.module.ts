@@ -1,9 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
+import {HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 //Rutas
 import { app_routing } from "./app.routes";				
+
+//services
+import {InformacionService} from './services/informacion.service';
+import {ProductsService} from './services/products.service';
+
+
 
 //animations
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -17,6 +25,7 @@ import { PatrocinadosComponent } from './components/patrocinados/patrocinados.co
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { TixComponent } from './components/tix/tix.component';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -33,11 +42,17 @@ import { TixComponent } from './components/tix/tix.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     BrowserAnimationsModule,
   	MaterialModule,
-    app_routing
+    HttpModule,
+    app_routing,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    InformacionService,
+    ProductsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
