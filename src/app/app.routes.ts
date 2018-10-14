@@ -7,8 +7,6 @@ import {
 	TixComponent
 	}from "./components/index.paginas";
 
-
-
 const app_routes: Routes = [
 	{path:'',component:AllProductsComponent},
 	{path:'about',component:AboutComponent},
@@ -16,4 +14,4 @@ const app_routes: Routes = [
 	{path:'tix',component:TixComponent},
 	{path:'**',pathMatch:'full',redirectTo:''}
 	];
-	export const app_routing = RouterModule.forRoot(app_routes);		
+	export const app_routing = RouterModule.forRoot(app_routes);

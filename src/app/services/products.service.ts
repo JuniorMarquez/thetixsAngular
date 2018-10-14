@@ -6,14 +6,14 @@ import { Http } from '@angular/http';
 })
 export class ProductsService {
 	loadedProducts:boolean=false;
- 	AllLoadedProducts:any[][]=[[],[]];
+ 	AllLoadedProducts:any={};
  	products:any[]=[];
  	constructor(public http:Http) { 
  		this.loadInfo2();
   
   	}
   	  	public loadInfo2(){
-  			this.http.get("https://www.thetixsapp.com:1350/product")
+  			this.http.get("assets/data/info.product.json")
 			.subscribe(data =>{
 				this.loadedProducts=true;
 				this.AllLoadedProducts=data.json();

@@ -105,7 +105,7 @@
             <div class="gallery-menu text-center gallery-menu-5">
                 <button type="button" class="active" data-filter="*">All</button>
                 <button type="button" data-filter=".cat-1">USA</button>
-                <button type="button" data-filter=".cat-2">CANADA</button>
+                <button type="button" data-filter=".Tours">TOURS</button>
                 <button type="button" data-filter=".cat-3">EUROPE</button>
                 <button type="button" data-filter=".cat-4">INDIA</button>
                 <button type="button" data-filter=".cat-5">CHINA</button>
@@ -117,8 +117,8 @@
 </div>
 <!-- <h1 style="font-family:Poppins;" ngif="_ps.products">{{_ps.products[0].v1}}</h1> -->
 
-<div class="gallery-items5">
-    <div  class="col-md-4 col-lg-4 col-sm-6 col-xs-12 grid-item  cat-2 cat-4 cat-6" >
+<div class="gallery-items5" >
+    <div  class="col-md-4 col-lg-4 col-sm-6 col-xs-12 grid-item"  *ngFor="let product of _ps.products"  >
         <div class="product-thumb" >
             <div class="image">
                 <a href="#"><img src="assets/images/places/p1.jpg" alt="p1" title="p1" class="img-responsive" /></a>
@@ -129,7 +129,7 @@
                     </span>
                 </div>
                 <div class="matter">
-                  
+                  <H2>{{product.productName}}</H2>
                     <p>start from $375.00</p>
                     <ul class="list-inline">
                         <li><a href="#">top rates</a></li>
@@ -140,7 +140,7 @@
             <div class="caption">
                 <div class="inner">
                     <span class="fa fa-map-marker"></span>
-                    <h4>Central Park</h4>
+                    <!-- <h4>{{}}</h4> -->
                     <span>1270 Reviews</span>
                     <div class="rate">
                         <i class="fa fa-star" aria-hidden="true"></i>
