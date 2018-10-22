@@ -5643,11 +5643,11 @@ footer .widget ul.instagram-list li {
 }
 
 .gallery-menu button {
-    padding: 8px 20px;
+    padding: 0px 20px;
     border: transparent;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
     background-color: transparent;
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 500;
      font-family: 'moderna';
     color: #777;
@@ -6344,6 +6344,7 @@ header .social-icon ul li a {
 
 .product-thumb {
     margin-bottom: 0px;
+    
 }
 
 .product-thumb .image {
@@ -6452,12 +6453,12 @@ header .social-icon ul li a {
 }
 
 .product-thumb .caption .inner i {
-    color: #66a91e;
+    color: #fccc00;
     font-size: 13px;
 }
 
 .product-thumb .caption .inner span.fa-map-marker {
-    color: #66a91e;
+    color: #e62a24;;
     font-size: 40px;
     float: left;
     font-family: FontAwesome;

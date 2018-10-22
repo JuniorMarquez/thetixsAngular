@@ -27,6 +27,7 @@ import { TixComponent } from './components/tix/tix.component';
 import {HttpClientModule} from '@angular/common/http';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
