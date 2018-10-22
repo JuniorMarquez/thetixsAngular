@@ -6425,13 +6425,13 @@ header .social-icon ul li a {
 }
 
 .product-thumb .caption {
-    border: 1px solid #E5E5E5;
+    /*border: 1px solid #E5E5E5;*/
     border-top: 0;
 }
 
 .product-thumb .caption .inner {
     padding: 30px 36px;
-    border-bottom: 1px solid #E5E5E5;
+    /*border-bottom: 1px solid #E5E5E5;*/
 }
 
 .product-thumb .caption .inner img {

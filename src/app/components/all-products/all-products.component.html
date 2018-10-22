@@ -112,20 +112,20 @@
     <!--End gallery Button-->
 </div>
 
-<div class="gallery-items5" >
+<div class="gallery-items5" *ngIf="_ps.products">
 <a  >
-    <div  class="col-md-4 col-lg-4 col-sm-6 col-xs-12 grid-item "  *ngFor="let product of _ps.products"  [ngClass]="product.categoryAll"  (click)="send(product)">
-        <div  class="product-thumb" style=" box-shadow: 20px 20px 30px 0 rgba(44, 50, 50, 0.28);">
+    <div  class="col-md-4 col-lg-4 col-sm-6 col-xs-12 grid-item "  *ngFor="let product of _ps.products"  [ngClass]="product.categoryAll"  (click)="send(product)" >
+        <div  class="product-thumb" style=" box-shadow: 10px 10px 20px 0 rgba(44, 50, 50, 0.28);border-radius:50px;">
             <div class="image" >
-                <a ><img  src="{{product.image}}" class="img-responsive" /></a>
-                <div class="hoverbox">
+                <a ><img  src="{{product.image}}" class="img-responsive" style="border-radius:50px 50px 0px 0px;" /></a>
+                <div class="hoverbox" style="border-radius:50px 50px 0px 0px;">
                     <div class="icon_plus" aria-hidden="true"></div>
                     <span>
                         <a class="venobox" data-gall="myGallery" href="assets/images/places/p1.jpg"><i class="fa fa-link"></i></a>
                     </span>
                 </div>
                 <div class="matter">
-                  <H2 style="background-color:rgba(0, 0, 0, .5);padding:19px;font-family:Roboto;margin:0 0 0 0px;">{{product.productName}}</H2>
+                  <H2 style="background-color:rgba(0, 0, 0, .5);padding:19px;font-family:Rubik;margin:0 0 0 0px;">{{product.productName}}</H2>
                     
                 </div>
             </div>
