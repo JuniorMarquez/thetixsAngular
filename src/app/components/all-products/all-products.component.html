@@ -112,7 +112,7 @@
     <!--End gallery Button-->
 </div>
 
-<div class="gallery-items5" *ngIf="_ps.products">
+<div class="gallery-items5" >
 <a  >
     <div  class="col-md-4 col-lg-4 col-sm-6 col-xs-12 grid-item "  *ngFor="let product of _ps.products"  [ngClass]="product.categoryAll"  (click)="send(product)" >
         <div  class="product-thumb" style=" box-shadow: 10px 10px 20px 0 rgba(44, 50, 50, 0.28);border-radius:50px;">
