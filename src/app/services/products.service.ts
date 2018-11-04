@@ -11,6 +11,7 @@ export class ProductsService {
   loadedCategorys:boolean=false;
   AllLoadedCategorys:any={};
   categorys:any[]=[];
+  imagesG:any[]=[];
 
  	constructor(public http:Http) { 
  		this.loadInfo2();  
@@ -25,9 +26,17 @@ export class ProductsService {
   	  this.products=this.AllLoadedProducts.results;   
       for (var i=0;i<this.products.length;i++){
         this.products[i].image="https://www.thetixsapp.com/web/"+this.products[i].images[0];
+        this.products[i].imagesG=[];
         if(this.products[i].images.length<2){
           this.products[i].image="https://www.thetixs.com/assets/images/logo/logo-black-color-1.png";
+           this.products[i].imagesG[0]=this.products[i].image;
         }
+        else{
+          for (var j=0;j<this.products[i].images.length;j++){
+            this.products[i].imagesG[j]="https://www.thetixsapp.com/web/"+this.products[i].images[j];
+          }
+        }
+
         this.products[i].categoryAll=[];
         for (var j=0;j<this.products[i].category.length;j++){
           this.products[i].category[j]=this.products[i].category[j].replace(/\s/g,"_");

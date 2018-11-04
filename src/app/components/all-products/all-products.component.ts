@@ -9,10 +9,17 @@ import { ProductsService } from "../../services/products.service";
 
 export class AllProductsComponent {
 	productsFil:any[]=[];
+	imagesG:any[]=[];
 	menu:any={};
 	constructor(public _ps:ProductsService) {
-  		this.ngSort,this.send
+  		this.ngSort,this.send,this.loadImages
   	}
+
+	public loadImages(product)
+	{
+		this._ps.imagesG=product.images;
+	}
+
   	public send(producto){
   		alert(""+producto.productName);
   	}	
@@ -27,6 +34,7 @@ export class AllProductsComponent {
   		}
 	}
 	ngOnInit(): void {
+		this._ps.imagesG=[];
 		this.productsFil=this._ps.products;	
 		console.log(this._ps.products);	
  		$.getScript('assets/js/collage.js');
