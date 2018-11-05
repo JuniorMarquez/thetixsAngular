@@ -1,6 +1,9 @@
 import { Component ,  OnInit} from '@angular/core';
 import * as $ from 'jquery';
 import { ProductsService } from "../../services/products.service";
+import { Lightbox } from 'ngx-lightbox';
+
+
 
 @Component({
   selector: 'app-all-products',
@@ -8,16 +11,47 @@ import { ProductsService } from "../../services/products.service";
 })
 
 export class AllProductsComponent {
+
+	 _albums:any[]=[];
 	productsFil:any[]=[];
 	imagesG:any[]=[];
 	menu:any={};
-	constructor(public _ps:ProductsService) {
-  		this.ngSort,this.send,this.loadImages
+	 private _album: Array<string> = [];
+	constructor(public _ps:ProductsService, private _lightbox:Lightbox) {
+  		this.ngSort,this.send,this.loadImages,open,close
+
   	}
+ 
+  open(index: number): void {
+    // open lightbox
+    this._lightbox.open(this._albums, index);
+  }
+
+  close(): void {
+    // close lightbox programmatically
+    this._lightbox.close();
+  }
+
+
 
 	public loadImages(product)
 	{
+		this._albums=[];
 		this._ps.imagesG=product.images;
+
+		 for (var i = 0; i <product.images.length; i++) {
+		      const src = "https://www.thetixsapp.com/web/"+product.images[i];
+		      const caption = '';
+		      const thumb = product.images[i];
+		      const album = {
+		         src: src,
+		         caption: caption,
+		         thumb: thumb
+		      };
+
+		    this._albums.push(album);
+		 }
+		 this._lightbox.open(this._albums, 0);
 	}
 
   	public send(producto){

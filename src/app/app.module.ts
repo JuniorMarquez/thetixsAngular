@@ -25,6 +25,7 @@ import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { TixComponent } from './components/tix/tix.component';
 import {HttpClientModule} from '@angular/common/http';
+import { LightboxModule } from 'ngx-lightbox';
 
 
 
@@ -46,11 +47,13 @@ import {HttpClientModule} from '@angular/common/http';
     BrowserAnimationsModule,
   	MaterialModule,
     HttpModule,
-    app_routing
+    app_routing,
+    LightboxModule
   ],
   providers: [
     InformacionService,
-    ProductsService
+    ProductsService,
+    LightboxModule
   ],
   bootstrap: [AppComponent]
 })

@@ -99,6 +99,7 @@
         </div>
     </div>
     <!--Start hotel Button-->
+
  
     <div class="row">
         <div class="col-md-12">
@@ -114,7 +115,7 @@
 
 <div class="gallery-items5" >
 <a  >
-    <div  class="col-md-4 col-lg-4 col-sm-6 col-xs-12 grid-item "  *ngFor="let product of _ps.products"  [ngClass]="product.categoryAll"  (click)="loadImages(product)"  routerLink="tix">
+    <div  class="col-md-4 col-lg-4 col-sm-6 col-xs-12 grid-item "  *ngFor="let product of _ps.products"  [ngClass]="product.categoryAll"  (click)="loadImages(product)"     >
         <div  class="product-thumb" style=" box-shadow: 10px 10px 20px 0 rgba(44, 50, 50, 0.28);border-radius:35px;">
             <div class="image" >
                 <a ><img  src="{{product.image}}" class="img-responsive" style="border-radius:35px 35px 0px 0px;" /></a>
