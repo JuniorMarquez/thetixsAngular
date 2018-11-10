@@ -9,9 +9,6 @@ import { app_routing } from "./app.routes";
 //services
 import {InformacionService} from './services/informacion.service';
 import {ProductsService} from './services/products.service';
-
-
-
 //animations
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //Material
@@ -24,12 +21,14 @@ import { PatrocinadosComponent } from './components/patrocinados/patrocinados.co
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { TixComponent } from './components/tix/tix.component';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { LightboxModule } from 'ngx-lightbox';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Component, Inject} from '@angular/core';
 
 
 @NgModule({
+
   declarations: [
     AppComponent,
     HeaderComponent,
@@ -44,6 +43,7 @@ import { LightboxModule } from 'ngx-lightbox';
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     BrowserAnimationsModule,
   	MaterialModule,
     HttpModule,

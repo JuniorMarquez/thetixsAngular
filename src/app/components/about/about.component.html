@@ -29,6 +29,16 @@
             </div>
         </div>
     </div>
+    <ol>
+
+  <li>
+    <button mat-raised-button (click)="openDialog()">Pick one</button>
+  </li>
+  <li *ngIf="animal">
+    You chose: <i>{{animal}}</i>
+  </li>
+</ol>
+
    <div class="container">
             <div class="row">
                 <div class="col-md-6 col-sm-12 about_para">
@@ -38,6 +48,8 @@
                             <div class="title-separator bg-primary style-liner"></div>
                         </div>
                     </div>
+                 
+
                     <p>We are a group of young people who aim to provide a virtual platform to facilitate commercial activity between suppliers and sales representatives in the tourism industry.</p>
                     <p>Our goal is to achieve a healthier tourism environment in which we can present a wider and more unique range of options for all customers. Provide a reliable and up-to-date information channel to our community experts and promote local activities, regardless of their size, location and resources.</p>
                     <ul class="aboutfeature">

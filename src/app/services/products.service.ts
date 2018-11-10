@@ -5,20 +5,17 @@ import { Http } from '@angular/http';
   providedIn: 'root'
 })
 export class ProductsService {
-	loadedProducts:boolean=false;
- 	AllLoadedProducts:any={};
- 	products:any[]=[];
+  loadedProducts:boolean=false;
+  AllLoadedProducts:any={};
+  products:any[]=[];
   loadedCategorys:boolean=false;
   AllLoadedCategorys:any={};
   categorys:any[]=[];
   imagesG:any[]=[];
-
- 	constructor(public http:Http) { 
+  constructor(public http:Http) { 
  		this.loadInfo2();  
   	}
-
   public loadInfo2(){
-
   	this.http.get("https://www.thetixsapp.com:1350/product")
     .subscribe(data =>{
   	  this.loadedProducts=true;
@@ -29,14 +26,13 @@ export class ProductsService {
         this.products[i].imagesG=[];
         if(this.products[i].images.length<2){
           this.products[i].image="https://www.thetixs.com/assets/images/logo/logo-black-color-1.png";
-           this.products[i].imagesG[0]=this.products[i].image;
+          this.products[i].imagesG[0]=this.products[i].image;
         }
         else{
           for (var j=0;j<this.products[i].images.length;j++){
             this.products[i].imagesG[j]="https://www.thetixsapp.com/web/"+this.products[i].images[j];
           }
         }
-
         this.products[i].categoryAll=[];
         for (var j=0;j<this.products[i].category.length;j++){
           this.products[i].category[j]=this.products[i].category[j].replace(/\s/g,"_");
@@ -44,14 +40,13 @@ export class ProductsService {
         }
       }
     })
-    this.http.get("https://www.thetixsapp.com:1350/category")
-    .subscribe(data =>{
+    this.http.get("https://www.thetixsapp.com:1350/category").subscribe(data =>{
       this.loadedCategorys=true;
       this.AllLoadedCategorys=data.json();
       this.categorys=[];
       this.categorys=this.AllLoadedCategorys.results;
       for (var i = 0;i<this.categorys.length;i++){
-        this.categorys[i].filter="."+this.categorys[i].name.replace(/\s/g,"_");;
+        this.categorys[i].filter="."+this.categorys[i].name.replace(/\s/g,"_");
       }
     })
   }
