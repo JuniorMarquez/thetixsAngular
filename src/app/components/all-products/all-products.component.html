@@ -115,9 +115,9 @@
 
 <div class="gallery-items5" >
 <a  >
-    <div  class="col-md-4 col-lg-4 col-sm-6 col-xs-12 grid-item "  *ngFor="let product of _ps.products"  [ngClass]="product.categoryAll"  (click)="loadImages(product)"     >
+    <div  class="col-md-4 col-lg-4 col-sm-6 col-xs-12 grid-item "  *ngFor="let product of _ps.products"  [ngClass]="product.categoryAll"   >
         <div  class="product-thumb" style=" box-shadow: 10px 10px 20px 0 rgba(44, 50, 50, 0.28);border-radius:35px;">
-            <div class="image" >
+            <div class="image"  (click)="loadImages(product)"   >
                 <a ><img  src="{{product.image}}" class="img-responsive" style="border-radius:35px 35px 0px 0px;" /></a>
                 <div class="hoverbox" style="border-radius:35px 35px 0px 0px;">
                     <div class="icon_plus" aria-hidden="true">                      
@@ -135,10 +135,13 @@
                 </div>
             </div>
             <div class="caption">
+                <p></p>
+                <span><dialog-overview-example>Loading Material Docs example...</dialog-overview-example></span>
                 <div class="inner">
+                
                     <span class="fa fa-map-marker"></span>
                     <!-- <h4>{{}}</h4> -->
-                    <p > start from $375.00</p>
+                    
                     <ul class="list-inline">
                         <li><a href="#">top rates</a></li>
                         <li><a href="#">hotels deals </a></li>

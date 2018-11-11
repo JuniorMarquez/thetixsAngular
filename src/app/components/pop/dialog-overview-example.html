@@ -1,0 +1,18 @@
+<ol>
+     <!--  <li>
+      <mat-form-field>
+        <input matInput [(ngModel)]="name" placeholder="What's your name?">
+      </mat-form-field>
+    </li>-->
+     <!--  <li>-->
+  
+          <button mat-mini-fab>
+              <mat-icon (click)="openDialog()">add_shopping_cart</mat-icon>
+            </button>
+          <!-- <button mat-fab (click)="openDialog()"><mat-icon>add_shopping_cart</mat-icon></button>
+     -->
+     <!--  </li>-->
+    <li *ngIf="animal">
+      You chose: <i>{{animal}}</i>
+    </li>
+  </ol>
