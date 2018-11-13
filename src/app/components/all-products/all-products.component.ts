@@ -1,4 +1,4 @@
-import { Component ,  OnInit} from '@angular/core';
+import { Component ,  OnInit,Inject} from '@angular/core';
 import * as $ from 'jquery';
 import { ProductsService } from "../../services/products.service";
 import { Lightbox } from 'ngx-lightbox';

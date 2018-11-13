@@ -6,11 +6,11 @@
     </li>-->
      <!--  <li>-->
   
-          <button mat-mini-fab>
+    <!--       <button mat-mini-fab>
               <mat-icon (click)="openDialog()">add_shopping_cart</mat-icon>
-            </button>
-          <!-- <button mat-fab (click)="openDialog()"><mat-icon>add_shopping_cart</mat-icon></button>
-     -->
+            </button> -->
+          <button mat-fab (click)="openDialog()"><mat-icon>add_shopping_cart</mat-icon></button>
+    
      <!--  </li>-->
     <li *ngIf="animal">
       You chose: <i>{{animal}}</i>
