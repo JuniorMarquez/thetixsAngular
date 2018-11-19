@@ -158,6 +158,7 @@ Version      : 1.0
     }
     .mainmenu .navbar-nav li a {
         padding: 11px 15px;
+        font-size: 20px;
     }
     .navbar-fixed-bottom .navbar-collapse,
     .navbar-fixed-top .navbar-collapse {
@@ -811,9 +812,11 @@ Version      : 1.0
     }
     .mainmenu .navbar-nav li a {
         padding: 11px 15px;
+        font-size: 20px;
     }
     .menu-bg .mainmenu .navbar-nav li a {
         padding: 11px 15px;
+        font-size: 20px;
     }
     .navbar-fixed-bottom .navbar-collapse,
     .navbar-fixed-top .navbar-collapse {

@@ -2,6 +2,7 @@
 <div class="container">
   
 <div class="row">
+
           <div id="rev_slider_28_1" class="rev_slider " style="display:none;" data-version="5.4.1">
                 <ul>
                  
@@ -115,7 +116,7 @@
 
 <div class="gallery-items5" >
 <a  >
-    <div  class="col-md-4 col-lg-4 col-sm-6 col-xs-12 grid-item "  *ngFor="let product of _ps.products"  [ngClass]="product.categoryAll"   >
+    <div  class="col-md-4 col-lg-4 col-sm-6 col-xs-12 grid-item "  *ngFor="let product of _ps.products" [ngClass]="product.categoryAll"   >
         <div  class="product-thumb" style=" box-shadow: 10px 10px 20px 0 rgba(44, 50, 50, 0.28);border-radius:35px;">
             <div class="image"  (click)="loadImages(product)"   >
                 <a ><img  src="{{product.image}}" class="img-responsive" style="border-radius:35px 35px 0px 0px;" /></a>
@@ -134,10 +135,13 @@
                     
                 </div>
             </div>
+            
+             <p style="padding:20px;"><button mat-fab (click)="openDialog(product)"><mat-icon>add_shopping_cart</mat-icon></button>
+</p>
             <div class="caption">
-                <p></p>
-                <dialog-overview-example>Loading button...</dialog-overview-example>
-                <div class="inner">
+               
+              <!--   <dialog-overview-example (click)="setProduct(product)">Loading button...</dialog-overview-example> -->
+                                <div class="inner">
                 
                     <span class="fa fa-map-marker"></span>
                     <!-- <h4>{{}}</h4> -->

@@ -106,10 +106,10 @@ p {
 }
 
 
-input{
+/*input{
     font-family: "Roboto", sans-serif;
     outline: none;
-}
+}*/
 
 
 fieldset {
@@ -641,7 +641,7 @@ a.read-more:hover {
 .mainmenu .navbar-nav li a {
     color: #ffffff;
     text-transform: capitalize;
-    font-size: 16px;
+    font-size: 29px;
     padding-top: 0px;
     padding-bottom: 0px;
     padding-right: 0;
@@ -690,7 +690,7 @@ li.dropdown ul.dropdown-menu li a{
     min-width: 165px;
     padding: 5px 0;
     margin: 2px 0 0;
-    font-size: 14px;
+    font-size: 29px;
     text-align: left;
     list-style: none;
     -webkit-background-clip: padding-box;
@@ -700,7 +700,7 @@ li.dropdown ul.dropdown-menu li a{
     box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
 }
 .mainmenu .navbar-left li.dropdown a {
-
+    font-family: moderna;
     border-bottom: none;
 }
 
@@ -795,7 +795,7 @@ li.dropdown ul.dropdown-menu li a{
     color: #000;
     float: right;
     padding-right: 20px;
-    font-size: 30px;
+    font-size: 14px;
     margin-bottom: 50px;
 }
 
@@ -2797,11 +2797,11 @@ a.more-portfolio {
     display: block;
     color: #17a9a8;
 }
-
+/*
 .field-icon input,
 .field-icon select {
     padding-left: 50px;
-}
+}*/
 
 .field-icon .form-control {
     margin-bottom: 0px;

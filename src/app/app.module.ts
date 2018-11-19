@@ -10,6 +10,7 @@ import { app_routing } from "./app.routes";
 //services
 import {InformacionService} from './services/informacion.service';
 import {ProductsService} from './services/products.service';
+import {ProductInfoService} from './services/product-info.service';
 //animations
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //Material
@@ -17,14 +18,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule,MatTabsModule } from '@angular/material';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatIconModule} from '@angular/material/icon';
-
+import {MatInputModule} from '@angular/material/input';
+import {MatListModule} from '@angular/material/list';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { AllProductsComponent } from './components/all-products/all-products.component';
+import { AllProductsComponent,DialogOverviewExampleDialog } from './components/all-products/all-products.component';
 import { CollageComponent } from './components/collage/collage.component';
 import { PatrocinadosComponent } from './components/patrocinados/patrocinados.component';
 import { AboutComponent } from './components/about/about.component';
-import { DialogOverviewExample, DialogOverviewExampleDialog } from './components/pop/dialog-overview-example';
 
 import { ContactComponent } from './components/contact/contact.component';
 import { TixComponent } from './components/tix/tix.component';
@@ -46,7 +49,7 @@ import { Component, Inject} from '@angular/core';
     AboutComponent,
     ContactComponent,
     TixComponent,
-    DialogOverviewExample, DialogOverviewExampleDialog
+     DialogOverviewExampleDialog
   ],
   imports: [
     BrowserModule,
@@ -57,12 +60,16 @@ import { Component, Inject} from '@angular/core';
     HttpModule,
     app_routing,
     LightboxModule,
-    MatButtonModule, MatCheckboxModule, MatTabsModule,MatDialogModule,MatIconModule
+    MatButtonModule, MatCheckboxModule, MatTabsModule,MatDialogModule,MatIconModule,MatInputModule,
+    MatListModule,MatDatepickerModule,
+    MatNativeDateModule
   ],
   exports: [
-    MatButtonModule, MatCheckboxModule, MatTabsModule,MatDialogModule,MatIconModule
+    MatButtonModule, MatCheckboxModule, MatTabsModule,MatDialogModule,MatIconModule,MatInputModule,
+    MatListModule,MatDatepickerModule,
+    MatNativeDateModule
   ],
- entryComponents:[DialogOverviewExample, DialogOverviewExampleDialog],
+ entryComponents:[ DialogOverviewExampleDialog],
   providers: [
     InformacionService,
     ProductsService,

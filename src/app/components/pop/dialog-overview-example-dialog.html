@@ -1,9 +1,31 @@
-<h1 mat-dialog-title>Hi</h1>
+<h1 mat-dialog-title>Add<b>{{data.product.productName}}</b>  to cart?</h1>
 <div mat-dialog-content>
-  <p>Add this tix to car?</p>
-<!--   <mat-form-field>
-    <input matInput [(ngModel)]="data.animal">
-  </mat-form-field> -->
+
+	<mat-form-field>
+	  <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+	  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+	  <mat-datepicker #picker ></mat-datepicker>
+	</mat-form-field>
+
+	<mat-divider></mat-divider>
+	<mat-list role="list">
+		<mat-list-item role="listitem"*ngFor="let product of data.product.itemsPrices">
+		<p mat-line>
+			{{product.label}} 
+			<mat-divider></mat-divider>
+		</p>
+		<p mat-line>
+			<button mat-icon-button color="primary" (click)="changeRemove()">
+				<mat-icon aria-label="Example icon-button with a heart icon">remove_circle</mat-icon>
+			</button> 
+		{{quan}}
+			<button mat-icon-button color="primary" (click)="changeAdd()">
+				<mat-icon aria-label="Example icon-button with a heart icon">add_circle</mat-icon>
+			</button> <b>$ {{product.price}} </b>  /  tix 
+		</p>
+		</mat-list-item>
+
+	</mat-list>
 </div>
 <div mat-dialog-actions>
   <button mat-button (click)="onNoClick()">No Thanks</button>
