@@ -52,7 +52,7 @@ Version      : 1.0
 @import url('jquery.fancybox.min.css');
 @font-face {
     font-family: moderna;
-    src: url(fonts/moderna.TTF);
+    src: url(fonts/moderna.ttf);
     /*font-weight: normal;*/
     /*font-style: normal;*/
 }

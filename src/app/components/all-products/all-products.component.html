@@ -94,7 +94,8 @@
 <div class="row">
 <div class="places">
     <div class="section-title text-center">
-        <h2>Top Tixs </h2>
+            <span style="font-size:36px;font-family:moderna;">{{_ps.products.length}} </span>
+        <h2> tixs available in </h2><span style="font-size:36px;font-family:moderna;"> {{_ps.categorys.length}} </span><h2> categorys</h2>
         <div class="title-separator-outer ">
             <div class="title-separator bg-primary style-liner"></div>
         </div>
@@ -117,10 +118,10 @@
 <div class="gallery-items5" >
 <a  >
     <div  class="col-md-4 col-lg-4 col-sm-6 col-xs-12 grid-item "  *ngFor="let product of _ps.products" [ngClass]="product.categoryAll"   >
-        <div  class="product-thumb" style=" box-shadow: 10px 10px 20px 0 rgba(44, 50, 50, 0.28);border-radius:35px;">
+        <div  class="product-thumb" style=" box-shadow: 10px 10px 20px 0 rgba(44, 50, 50, 0.28);border-radius:17px;">
             <div class="image"  (click)="loadImages(product)"   >
-                <a ><img  src="{{product.image}}" class="img-responsive" style="border-radius:35px 35px 0px 0px;" /></a>
-                <div class="hoverbox" style="border-radius:35px 35px 0px 0px;">
+                <a ><img  src="{{product.image}}" class="img-responsive" style="border-radius:17px 17px 0px 0px;" /></a>
+                <div class="hoverbox" style="border-radius:17px 17px 0px 0px;">
                     <div class="icon_plus" aria-hidden="true">                      
                     </div>
                 <!--     <span >
@@ -131,34 +132,50 @@
                     </span> -->
                 </div>
                 <div class="matter">
-                  <H2 style="background-color:rgba(0, 0, 0, .5);padding:19px;font-family:Rubik;margin:0 0 0 0px;">{{product.productName}}</H2>
+                  <H3 style="background-color:rgba(0, 0, 0, .5);padding:19px;font-family:Rubik;margin:0 0 0 0px;"> from $ {{product.itemsPrices[0].price}}
+
+                  </H3>
                     
                 </div>
             </div>
             
-             <p style="padding:20px;"><button mat-fab (click)="openDialog(product)"><mat-icon>add_shopping_cart</mat-icon></button>
-</p>
+             
             <div class="caption">
                
               <!--   <dialog-overview-example (click)="setProduct(product)">Loading button...</dialog-overview-example> -->
-                                <div class="inner">
+                 <div class="inner">
                 
-                    <span class="fa fa-map-marker"></span>
-                    <!-- <h4>{{}}</h4> -->
                     
+                    <!-- <h4>{{}}</h4> -->
+                    <div style="max-width:275px;">
+                     <span style="font-size:30px;font-family:moderna;color:#579ce0;">{{product.productName}}</span>
+                   
+                     </div>
+                     <div style="max-width:150px;align:center;">
+                          <div class="rate">
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                        </div>
+                     </div>
+                     
+                    
+                     <span class="fa fa-map-marker"></span> 
                     <ul class="list-inline">
-                        <li><a href="#">top rates</a></li>
-                        <li><a href="#">hotels deals </a></li>
+                    <span style="font-size:15px;font-family:moderna;color:#17a9a8;">{{product.partnerName}}</span>
+                       
+                        <!-- <li><a href="#">hotels deals </a></li> -->
                     </ul>
-                    <span>1270 Reviews</span>
-                    <div class="rate">
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star-half-o" aria-hidden="true"></i>
-                    </div>
+                   
+                    
+                   
                 </div>
+            </div>
+            <div style="margin:-76px 18px 0px 25px;"  class="pull-right">
+             <button mat-fab (click)="openDialog(product)"><mat-icon>add_shopping_cart</mat-icon></button>
+            
             </div>
         </div>
     </div>

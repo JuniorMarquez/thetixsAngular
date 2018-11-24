@@ -91,16 +91,16 @@ export class DialogOverviewExampleDialog {
   constructor(
     public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData, public _pi:ProductInfoService) { }
-changeAdd(): void{
-	this.quan=this.quan+1;
-	 console.log('Valor de quan: ' +this.quan);
-}
-changeRemove(): void{
-	if (this.quan>0){
-			this.quan=this.quan-1;
-	 console.log('Valor de quan: ' +this.quan);
+	changeAdd(): void{
+		this.quan=this.quan+1;
+		 console.log('Valor de quan: ' +this.quan);
 	}
-}
+	changeRemove(): void{
+		if (this.quan>0){
+				this.quan=this.quan-1;
+		 console.log('Valor de quan: ' +this.quan);
+		}
+	}
   onNoClick(): void {
     this.dialogRef.close();
   }
