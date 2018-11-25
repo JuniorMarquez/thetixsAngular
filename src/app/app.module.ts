@@ -35,6 +35,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LightboxModule } from 'ngx-lightbox';
 import { FormsModule } from '@angular/forms';
 import { Component, Inject} from '@angular/core';
+import { PfooterComponent } from './components/pfooter/pfooter.component';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { Component, Inject} from '@angular/core';
     AboutComponent,
     ContactComponent,
     TixComponent,
-     DialogOverviewExampleDialog
+     DialogOverviewExampleDialog,
+     PfooterComponent
   ],
   imports: [
     BrowserModule,
