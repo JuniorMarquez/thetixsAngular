@@ -188,7 +188,7 @@ Version      : 1.0
         padding: 50px 0;
     }
     .navbar-collapse {
-        background: #000;
+        /*background: #000;*/
     }
     .menu-bg .navbar-collapse {
         background: #000;
