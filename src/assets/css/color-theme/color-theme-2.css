@@ -13,6 +13,7 @@
 
 .header-bg {
     background-image: url(assets/img/backgrounds-min/waves-header-min.png);
+    background-size: 100%;
 }
 
 .header-blog,
