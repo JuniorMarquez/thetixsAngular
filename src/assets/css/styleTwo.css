@@ -1392,7 +1392,7 @@ Demo
     transform: translateY(-3px) scale(1.01);
 }
 
-#color-theme-1 {
+/*#color-theme-1 {
     background-image: url(../img/thumb/thumb-1.png);
     background-size: cover;
 }
@@ -1415,7 +1415,7 @@ Demo
 #color-theme-5 {
     background-image: url(../img/thumb/thumb-5.png);
     background-size: cover;
-}
+}*/
 
 .color-switcher {
     top: 30%;

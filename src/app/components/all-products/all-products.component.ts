@@ -7,6 +7,14 @@ import { Lightbox } from 'ngx-lightbox';
 
 export interface DialogData {
   quan:number;
+  animal: string;
+  product:{
+  	productName:string,
+  	itemsPrices:{
+  		label:string;
+  		price:number;
+  	}
+  }
 }
 
 @Component({
@@ -78,7 +86,8 @@ export class AllProductsComponent {
 		$.getScript('assets/js/collage.js');
  		$.getScript('assets/js/scripts.js');
 		this._ps.imagesG=[];
-		this.productsFil=this._ps.products;			
+		this.productsFil=this._ps.products;	
+		this.product=[]	;	
   	}
 }	
  
@@ -88,6 +97,7 @@ export class AllProductsComponent {
 })
 export class DialogOverviewExampleDialog {
  quan: number = 0;
+
   constructor(
     public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData, public _pi:ProductInfoService) { }
