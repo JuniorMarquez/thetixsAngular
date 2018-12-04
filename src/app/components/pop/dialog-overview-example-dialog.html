@@ -1,6 +1,10 @@
-<h1 mat-dialog-title>Add <b> {{data.product.productName}}</b>  to cart?</h1>
+<!-- <h1 mat-dialog-title>Add <b> {{data.product.productName}}</b>  to cart?</h1> -->
+<h1 mat-dialog-title>
+<mat-icon md-48>error_outline</mat-icon>
+
+<b>Sorry</b>, we are doing maintenance work at this time, please try again later   </h1>
 <div mat-dialog-content>
-	<mat-form-field>
+	<!-- <mat-form-field>
 		<input matInput [matDatepicker]="picker" placeholder="Choose a date">
 		<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
 		<mat-datepicker #picker disabled="false" touchUi ></mat-datepicker>
@@ -22,9 +26,9 @@
 				</button> <b>$ {{product.price}} </b>  /  tix 
 			</p>
 		</mat-list-item>
-	</mat-list>
+	</mat-list> -->
 </div>
 <div mat-dialog-actions>
-	<button mat-button (click)="onNoClick()">No Thanks</button>
+	<!-- <button mat-button (click)="onNoClick()">No Thanks</button> -->
 	<button mat-button (click)="onNoClick()" cdkFocusInitial>Ok</button>
 </div>
