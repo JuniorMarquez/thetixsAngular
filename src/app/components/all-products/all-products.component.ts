@@ -82,11 +82,20 @@ export class AllProductsComponent {
 		}
 		this._lightbox.open(this._albums, 0);
 	}
+	public filter(){
+		//alert("tamano: "+this._ps.products.length);
+		 for (var i=0;i<this._ps.products.length;i++){
+        if(this._ps.products[i].status==true){
+          this.productsFil.push(this._ps.products[i]);
+        }
+      }
+	}
    	ngOnInit(): void {
+   		//this.filter();
 		$.getScript('assets/js/collage.js');
  		$.getScript('assets/js/scripts.js');
 		this._ps.imagesG=[];
-		this.productsFil=this._ps.products;	
+
 		this.product=[]	;	
   	}
 }	

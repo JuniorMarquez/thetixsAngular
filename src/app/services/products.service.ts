@@ -8,6 +8,7 @@ export class ProductsService {
   loadedProducts:boolean=false;
   AllLoadedProducts:any={};
   products:any[]=[];
+  productsFil:any[]=[];
   loadedCategorys:boolean=false;
   AllLoadedCategorys:any={};
   categorys:any[]=[];
@@ -39,8 +40,15 @@ export class ProductsService {
           this.products[i].categoryAll=this.products[i].categoryAll+" "+this.products[i].category[j];
         }
       }
+      for (var i=0;i<this.products.length;i++){
+      if(this.products[i].status==true){
+          this.productsFil.push(this.products[i]);
+        }
+      }
+      this.products=this.productsFil;
     })
-    this.http.get("https://www.thetixsapp.com:1350/category").subscribe(data =>{
+    
+      this.http.get("https://www.thetixsapp.com:1350/category").subscribe(data =>{
       this.loadedCategorys=true;
       this.AllLoadedCategorys=data.json();
       this.categorys=[];

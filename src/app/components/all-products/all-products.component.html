@@ -94,7 +94,7 @@
 <div class="row">
 <div class="places">
     <div class="section-title text-center">
-            <span style="font-size:36px;font-family:moderna;">{{_ps.products.length}} </span>
+            <span style="font-size:36px;font-family:moderna;">{{_ps.productsFil.length}} </span>
         <h2> tixs available in </h2><span style="font-size:36px;font-family:moderna;"> {{_ps.categorys.length}} </span><h2> categorys</h2>
         <div class="title-separator-outer ">
             <div class="title-separator bg-primary style-liner"></div>
@@ -117,7 +117,7 @@
 
 <div class="gallery-items5" >
 <a  >
-    <div  class="col-md-4 col-lg-4 col-sm-6 col-xs-12 grid-item "  *ngFor="let product of _ps.products" [ngClass]="product.categoryAll"   >
+    <div  class="col-md-4 col-lg-4 col-sm-6 col-xs-12 grid-item "  *ngFor="let product of _ps.productsFil" [ngClass]="product.categoryAll"   >
         <div  class="product-thumb" style=" box-shadow: 10px 10px 20px 0 rgba(44, 50, 50, 0.28);border-radius:17px;">
             <div class="image"  (click)="loadImages(product)"   >
                 <a ><img  src="{{product.image}}" class="img-responsive" style="border-radius:17px 17px 0px 0px;" /></a>
