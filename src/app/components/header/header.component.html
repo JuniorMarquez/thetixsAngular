@@ -58,20 +58,86 @@
                                     </ul>
                                     <ul class="nav navbar-nav navbar-right popup">
                                         <li style="padding-top:30px;">
-                                            <a href="#test-search" class="popup-with-zoom-anim" id="opensearch">
-                                             <mat-icon>shopping_cart</mat-icon>
+                                            <a href="#myCar" class="popup-with-zoom-anim" id="opencar">
+                                        
+                                              <mat-icon matBadge="15" matBadgeColor="warn">shopping_cart</mat-icon>
                                              <!--    <i class="fa fa-search">
                                                 </i> -->
                                             </a>
                                         </li>
+
                                         <span id="myOverlay" class="overlay overlay_home1">
+                                        
                                           <span class="closebtn" id="btnclose" title="Close Overlay">x</span>
                                         <span class="overlay-content">
-                                            <form action="action_page.php">
-                                              <input type="text" placeholder="Search.." name="search">
-                                              <mat-icon>shopping_cart</mat-icon>
+                                        <div >
+                                            <a >
+                                                <img style="top:12px;left:-35px;" alt="image" src="assets/images/flogo.png" >
+                                            </a>
+
+                                        </div>
+                                             <div > 
+
+
+
+<mat-list role="list" style="text-align:left;">
+  <mat-list-item role="listitem"  *ngFor="let product of _car.car; let i = index ">
+    <mat-icon mat-list-icon>folder</mat-icon>
+    <h4 mat-line> {{product.productName}}</h4>
+    <p mat-line>  <span>
+       <mat-divider></mat-divider>
+      <mat-list role="list">
+      <mat-list-item role="listitem"  *ngFor="let item of product.itemsPrices; let j = index">{{item.label}} Quantity: {{_car.car[i].quan[j]}}
+      </mat-list-item>
+      </mat-list>
+  </span>
+  </p>
+  </mat-list-item> 
+ </mat-list>
+ 
+                                                 
+
+
+
+
+
+
+                                        <!--     <mat-vertical-stepper [linear]="isLinear" #stepper>
+                                                <mat-step [stepControl]="firstFormGroup">
+                                                <form [formGroup]="firstFormGroup">
+                                                  <ng-template matStepLabel>Your tixs</ng-template>
+                                                  <mat-form-field>
+                                                    <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+                                                  </mat-form-field>
+                                                  <div>
+                                                    <button mat-button matStepperNext>Next</button>
+                                                  </div>
+                                                </form>
+                                              </mat-step>
+                                              <mat-step [stepControl]="secondFormGroup">
+                                                <form [formGroup]="secondFormGroup">
+                                                  <ng-template matStepLabel>Fill out your address</ng-template>
+                                                  <mat-form-field>
+                                                    <input matInput placeholder="Address" formControlName="secondCtrl" required>
+                                                  </mat-form-field>
+                                                  <div>
+                                                    <button mat-button matStepperPrevious>Back</button>
+                                                    <button mat-button matStepperNext>Next</button>
+                                                  </div>
+                                                </form>
+                                              </mat-step>
+                                              <mat-step>
+                                                <ng-template matStepLabel>Done</ng-template>
+                                                You are now done.
+                                                <div>
+                                                  <button mat-button matStepperPrevious>Back</button>
+                                                  <button mat-button (click)="stepper.reset()">Reset</button>
+                                                </div>
+                                              </mat-step>
+                                            </mat-vertical-stepper> -->
+                                            </div>
                                               <!-- <button type="submit"><i class="fa fa-search"></i></button> -->
-                                            </form>
+                                           
                                           </span>
                                         </span>
                                     </ul>

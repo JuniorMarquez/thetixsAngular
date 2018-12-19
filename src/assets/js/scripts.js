@@ -61,7 +61,7 @@ Version      : 1.0
         });
 
          // Open the full screen search box 
-        jQuery('#opensearch').on('click',function(){
+        jQuery('#opencar').on('click',function(){
             document.getElementById("myOverlay").style.display = "block";
         });
 

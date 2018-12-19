@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 //import { NgModule } from '@angular/core';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
@@ -11,6 +12,7 @@ import { app_routing } from "./app.routes";
 import {InformacionService} from './services/informacion.service';
 import {ProductsService} from './services/products.service';
 import {ProductInfoService} from './services/product-info.service';
+import {CarService} from './services/car.service';
 //animations
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //Material
@@ -22,6 +24,11 @@ import {MatInputModule} from '@angular/material/input';
 import {MatListModule} from '@angular/material/list';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatBadgeModule} from '@angular/material/badge';
+import {MatTableModule} from '@angular/material/table';
+
+
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AllProductsComponent,DialogOverviewExampleDialog } from './components/all-products/all-products.component';
@@ -33,7 +40,6 @@ import { ContactComponent } from './components/contact/contact.component';
 import { TixComponent } from './components/tix/tix.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LightboxModule } from 'ngx-lightbox';
-import { FormsModule } from '@angular/forms';
 import { Component, Inject} from '@angular/core';
 import { PfooterComponent } from './components/pfooter/pfooter.component';
 
@@ -64,12 +70,19 @@ import { PfooterComponent } from './components/pfooter/pfooter.component';
     LightboxModule,
     MatButtonModule, MatCheckboxModule, MatTabsModule,MatDialogModule,MatIconModule,MatInputModule,
     MatListModule,MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,MatStepperModule,
+    ReactiveFormsModule,
+    MatBadgeModule,
+    MatTableModule
   ],
   exports: [
     MatButtonModule, MatCheckboxModule, MatTabsModule,MatDialogModule,MatIconModule,MatInputModule,
     MatListModule,MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,MatStepperModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatBadgeModule,
+    MatTableModule
   ],
  entryComponents:[ DialogOverviewExampleDialog],
   providers: [

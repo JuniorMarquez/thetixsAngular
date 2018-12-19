@@ -3,17 +3,19 @@ import * as $ from 'jquery';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { ProductsService } from "../../services/products.service";
 import { ProductInfoService } from "../../services/product-info.service";
+import { CarService } from "../../services/car.service";
 import { Lightbox } from 'ngx-lightbox';
 
 export interface DialogData {
   quan:number;
-  animal: string;
+  car:any[];
   product:{
   	productName:string,
   	itemsPrices:{
   		label:string;
   		price:number;
   	}
+  	quan:{};
   }
 }
 
@@ -23,9 +25,9 @@ export interface DialogData {
 })
 
 export class AllProductsComponent {
- 	animal: string;
   	name: string;
-  	cart:any[]=[];
+  	car:any[]=[];
+  	tix:any[]=[];
   	product:any[]=[];
 	_albums:any[]=[];
 	productsFil:any[]=[];
@@ -33,7 +35,7 @@ export class AllProductsComponent {
 	menu:any={};
 	quan: number = 3;
 	private _album: Array<string> = [];
-	constructor(public _ps:ProductsService, public dialog: MatDialog, private _lightbox:Lightbox,public _pi:ProductInfoService) {
+	constructor(public _ps:ProductsService, public dialog: MatDialog, private _lightbox:Lightbox,public _pi:ProductInfoService,public _ca:CarService) {
 		this.loadImages,open,close
 	}
 	open(index: number): void {
@@ -42,29 +44,26 @@ export class AllProductsComponent {
 	close(): void {
 		this._lightbox.close();
 	}
+
 	openDialog(product): void {
 		//console.log('Producto: '+product.productName);
 		this.product=product;
-		//console.log('Producto: '+this._pi.productName);
-		//this.name=this._pi.productName;
-		//console.log('Producto: '+this.name);
 		let dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
       		width: '320px',
       		data: { 
       			quan:this.quan,
+      			car:this.car,
       			product: this.product 
       		}
     	});
-		
-    dialogRef.afterClosed().subscribe(result => {
-      //console.log('The dialog was closed');
-      this.product = result;
-      this.cart.push(this.product);
-      console.log('Array' +this.cart);
-    });
-  }
-
-
+	    dialogRef.afterClosed().subscribe(result => {
+      		this.product = result;
+      		//console.log('The dialog was closed'+this.product]);
+      		this._ca.car=this.car;
+      		//console.log("Producto: "+this.car[0].productName+" 1er label : "+this.car[0].itemsPrices[0].label+" 1er price: "+this.car[0].quan[0]);
+      		
+    	});
+  	}
 
 	public loadImages(product){
 		this._albums=[];
@@ -105,25 +104,36 @@ export class AllProductsComponent {
   templateUrl: '../pop/dialog-overview-example-dialog.html',
 })
 export class DialogOverviewExampleDialog {
- quan: number = 0;
-
-  constructor(
-    public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData, public _pi:ProductInfoService) { }
-	changeAdd(): void{
-		this.quan=this.quan+1;
-		 console.log('Valor de quan: ' +this.quan);
+ 	quan: any = {};
+	tix:any[]=[];
+  	constructor(
+    public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,@Inject(MAT_DIALOG_DATA) public data: DialogData, public _pi:ProductInfoService) {
+  		this.ini();
+    }
+     public ini(){
+     	for(var i = 0; i <20; i++){
+     		this.quan[i]=0;
+     	} 
+     	
+    }
+	changeAdd(item,i): void{
+		this.quan[i]=this.quan[i]+1;
+		// console.log( "indice: "+i +" Valor:" +this.quan[i]);
 	}
-	changeRemove(): void{
-		if (this.quan>0){
-				this.quan=this.quan-1;
-		 console.log('Valor de quan: ' +this.quan);
+	changeRemove(item,i): void{
+		if (this.quan[i]>0){
+				this.quan[i]=this.quan[i]-1;
+		// console.log( "indice: "+i +" Valor:" +this.quan[i]);
 		}
 	}
-  onNoClick(): void {
-    this.dialogRef.close();
+  	onNoClick(): void {
+  		
+    	this.dialogRef.close();
+  	}
+   ok(): void {
+   	this.data.product.quan=this.quan;
+   	this.data.car.push(this.data.product);
+   	this.dialogRef.close();
   }
 
 }
-
-

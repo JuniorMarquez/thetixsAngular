@@ -4494,8 +4494,9 @@ p.content {
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0, 0.9); /* Black with a little bit see-through */
+  background-color: white;
+
+  /*background-color: rgba(0,0,0, 0.9);  Black with a little bit see-through */
 }
 .explore-layout .image-wrapper .title-wrapper {
     font-size: 20px;
@@ -14844,7 +14845,7 @@ span.coln {
 /* The content */
 .overlay-content {
   position: relative;
-  top: 46%;
+  /*top: 26%;*/
   width: 80%;
   text-align: center;
   margin-top: 30px;
@@ -14852,18 +14853,22 @@ span.coln {
   display: inline-block;
 }
 
+
 /* Close button */
 .overlay .closebtn {
   position: absolute;
-  top: 20px;
+  /*top: 20px;
   right: 45px;
-  font-size: 60px;
+  font-size: 60px;*/
+  top: 12px;
+  right: 50px;
+  font-size: 40px;
   cursor: pointer;
-  color: white;
+  color: #323559;
 }
 
 .overlay .closebtn:hover {
-  color: #ccc;
+  color: #17a9a8;
 }
 
 /* Style the search field */
@@ -14884,6 +14889,7 @@ span.coln {
   border: none;
   float: left;
   width: 80%;
+  color:black;
   background: white;
 }
 .overlay input[type=text]:hover {
