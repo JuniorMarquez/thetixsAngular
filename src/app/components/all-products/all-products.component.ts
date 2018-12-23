@@ -8,6 +8,7 @@ import { Lightbox } from 'ngx-lightbox';
 
 export interface DialogData {
   quan:number;
+  size:number;
   car:any[];
   product:{
   	productName:string,
@@ -26,6 +27,7 @@ export interface DialogData {
 
 export class AllProductsComponent {
   	name: string;
+  	size:number;
   	car:any[]=[];
   	tix:any[]=[];
   	product:any[]=[];
@@ -53,6 +55,7 @@ export class AllProductsComponent {
       		data: { 
       			quan:this.quan,
       			car:this.car,
+      			size:this.size,
       			product: this.product 
       		}
     	});
@@ -60,6 +63,7 @@ export class AllProductsComponent {
       		this.product = result;
       		//console.log('The dialog was closed'+this.product]);
       		this._ca.car=this.car;
+      		this._ca.size=this.car.length;
       		//console.log("Producto: "+this.car[0].productName+" 1er label : "+this.car[0].itemsPrices[0].label+" 1er price: "+this.car[0].quan[0]);
       		
     	});
@@ -133,6 +137,7 @@ export class DialogOverviewExampleDialog {
    ok(): void {
    	this.data.product.quan=this.quan;
    	this.data.car.push(this.data.product);
+
    	this.dialogRef.close();
   }
 

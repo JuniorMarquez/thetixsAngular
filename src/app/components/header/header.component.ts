@@ -15,19 +15,18 @@ import { CarService } from "../../services/car.service";
 })
 export class HeaderComponent  implements OnInit {
   isLinear = false;
+  quanCar:number;
   car:any[]=[];
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
 
   constructor(private _formBuilder: FormBuilder,public _car:CarService) {
-    this.test();
   }
-    public test(){
-      this.car=this._car.car;
-    }
-
+  
   ngOnInit() {
+
     this.firstFormGroup = this._formBuilder.group({
+
       firstCtrl: ['', Validators.required]
     });
     this.secondFormGroup = this._formBuilder.group({
