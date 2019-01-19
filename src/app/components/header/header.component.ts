@@ -8,12 +8,23 @@ import { ProductsService } from "../../services/products.service";
 import { ProductInfoService } from "../../services/product-info.service";
 import { CarService } from "../../services/car.service";
 
+
+
+
 @Component({
   selector: 'app-header',
-  templateUrl: './header.component.html'
+  templateUrl: './header.component.html',
+    styleUrls: ['./header.component.css']
  
 })
+
+
+
 export class HeaderComponent  implements OnInit {
+
+ 
+
+
   isLinear = false;
   quanCar:number;
   car:any[]=[];
@@ -21,8 +32,12 @@ export class HeaderComponent  implements OnInit {
   secondFormGroup: FormGroup;
 
   constructor(private _formBuilder: FormBuilder,public _car:CarService) {
+    this.saludo
   }
-  
+  saludo(): void {
+    alert("hola");
+
+}  
   ngOnInit() {
 
     this.firstFormGroup = this._formBuilder.group({

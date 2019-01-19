@@ -1,0 +1,20 @@
+.my-list-1  {
+text-align:left;
+/*  min-height: 60px;*/
+}
+.mat-list-item{
+	 min-height: 60px;
+}
+.my-list-2  {
+text-align:left;
+ height: 30px;
+}
+.mat-list-item2{
+	 height: 10px;
+}
+.borderless li {
+    border: 0 none;
+}
+.icon {
+    font-size: 150px;
+}
