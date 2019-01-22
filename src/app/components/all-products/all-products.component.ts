@@ -26,11 +26,11 @@ export interface DialogData {
 })
 
 export class AllProductsComponent {
-  	name: string;
-  	size:number;
-  	car:any[]=[];
-  	tix:any[]=[];
-  	product:any[]=[];
+  name: string;
+  size:number;
+  car:any[]=[];
+  tix:any[]=[];
+  product:any[]=[];
 	_albums:any[]=[];
 	productsFil:any[]=[];
 	imagesG:any[]=[];
@@ -69,7 +69,7 @@ export class AllProductsComponent {
     	});
   	}
 
-	public loadImages(product){
+    public loadImages(product){
 		this._albums=[];
 		this._ps.imagesG=product.imagesG;
 		for (var i = 0; i <product.images.length; i++) {
@@ -98,7 +98,6 @@ export class AllProductsComponent {
 		$.getScript('assets/js/collage.js');
  		$.getScript('assets/js/scripts.js');
 		this._ps.imagesG=[];
-
 		this.product=[]	;	
   	}
 }	
@@ -110,6 +109,7 @@ export class AllProductsComponent {
 export class DialogOverviewExampleDialog {
  	quan: any = {};
 	tix:any[]=[];
+  product:any[]=[];
   	constructor(
     public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,@Inject(MAT_DIALOG_DATA) public data: DialogData, public _pi:ProductInfoService) {
   		this.ini();
@@ -123,22 +123,22 @@ export class DialogOverviewExampleDialog {
 	changeAdd(item,i): void{
 		this.quan[i]=this.quan[i]+1;
 		// console.log( "indice: "+i +" Valor:" +this.quan[i]);
-	}
+	  item.quan=this.quan[i];    
+  }
 	changeRemove(item,i): void{
 		if (this.quan[i]>0){
-				this.quan[i]=this.quan[i]-1;
-		// console.log( "indice: "+i +" Valor:" +this.quan[i]);
-		}
+		  this.quan[i]=this.quan[i]-1;
+		  //console.log( "indice: "+i +" Valor:" +this.quan[i]);
+		  item.quan=this.quan[i];
+    }
 	}
-  	onNoClick(): void {
-  		
-    	this.dialogRef.close();
-  	}
-   ok(): void {
-   	this.data.product.quan=this.quan;
-   	this.data.car.push(this.data.product);
-
-   	this.dialogRef.close();
+  onNoClick(): void {
+    this.dialogRef.close();
   }
-
+  ok(): void {
+   	//this.data.product=this.product;
+    //this.product=this.data.product;
+   	this.data.car.push(this.data.product);
+    this.dialogRef.close();
+  }
 }

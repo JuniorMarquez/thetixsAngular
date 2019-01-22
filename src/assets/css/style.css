@@ -1159,7 +1159,104 @@ input[type="submit"].button:hover {
 }
 .header-logo-3 .logo{
     padding: 20px 0;
+}.
+
+
+/*HEART INI*/
+.avatar {/*
+  height: 50px;
+  position: relative;
+  width: 50px;*/
 }
+
+.avatar img {
+  border-radius: 9999px;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+}
+
+@keyframes cycle-colors {
+  0% { border-color: hsl(0, 100%, 50%); }
+  25% { border-color: hsl(180,76%,38%); }
+  50% { border-color: hhsl(90, 100%, 1.6%); }
+  75% { border-color: hsl(270, 100%, 50%); }
+  100% { border-color: hsl(360, 100%, 50%); }
+}
+
+@keyframes pulse {
+  to {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+.qty{
+     /*padding: 0px 20px;*/
+    border: transparent;
+    /*margin-bottom: 30px;*/
+    background-color: transparent;
+    font-size: 14px;
+    font-weight: 500;
+     /*font-family: "moderna", sans-serif;*/
+         font-family: "Arimo", sans-serif;
+
+    color: black;
+}
+.qtyN{
+     /*padding: 0px 20px;*/
+    border: transparent;
+    /*margin-bottom: 30px;*/
+    background-color: transparent;
+    font-size: 14px;
+    font-weight: 500;
+     font-family: "moderna", sans-serif;
+    color: #1a69bf;
+}
+
+.avatar::before,
+.avatar::after {
+  animation: pulse 4s linear infinite;
+  border: #fff solid 4px;
+  border-radius: 99999px;
+  box-sizing: border-box;
+  content: ' ';
+  height: 69px;
+  left: -23px;
+  opacity: .6;
+  position: absolute;
+  top: -22px;
+  transform: scale(0.714);
+  width: 69px;
+  z-index: -1;
+}
+
+.avatar::after {
+  animation-delay: 4s;
+}
+
+.avatar:hover img {
+  
+}
+
+.avatar:hover::before,
+.avatar:hover::after {
+  animation: pulse 4s linear infinite, cycle-colors 4s linear infinite;
+}
+
+.avatar:hover::after {
+  animation-delay: 4s;
+}
+/*HEART FIN*/
+
+
+
+
+
+
+
+
+
 
 .display-table-cell5 .header-text h1 {
     color: #fff;
@@ -14862,14 +14959,14 @@ span.coln {
 
 .checkout{
     border-radius: 50%;
-    height: 80px;
-    width: 80px;
-    font-size: 56px;
+    height: 60px;
+    width: 60px;
+    font-size: 46px;
     color: #fff;
     text-align: center;
     position: fixed;
-    top: 80%;
-    right: 30px;
+    top: 85%;
+    right: 35px;
     /*line-height: 40px;*/
     cursor: pointer;
     display: none;

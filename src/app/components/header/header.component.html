@@ -1,205 +1,111 @@
-      <link rel="stylesheet" href="../../../assets/css/animations.css">
+<link rel="stylesheet" href="../../../assets/css/animations.css">
   <header id="home" class="welcome-area">
-        <div class="header-top-area">
-            <div class="container">
-    
-                <div class="row">
-                   <div class="col-md-4  ">
-                      
-                        <div class="logo" style="vertical-align:middle;">
-                            <a routerLink="">
-                                <img alt="image" src="assets/images/white-logo.png" >
-                            </a>
-                            <a href="#myCar" class="popup-with-zoom-anim" id="opencar" style="color:#fff;">
-                              <mat-icon matBadge="{{this._car.size}}" *ngIf="this._car.size>0 " matBadgeColor="warn" style="vertical-align:middle;">shopping_cart</mat-icon>
-                            </a>
-                        </div>
-                       
-                    </div>
-                    
-                    <div class="col-md-8">
-                    
-                        <div class="header_top">
-                            <div class="col-md-12">
-                               
-                                <div class="pull-right">
-                                    <a href="#">Login /</a><a href="https://www.thetixsapp.com" target="_blank">Register</a>
-
-                                   
-                                </div> 
-                            </div>
-                        </div>
-                        <div class="clearfix"></div>
-                      
-                        <div class="mainmenu">
-                            <div class="navbar navbar-nobg">
-                            <div class="navbar-header">
-                              <ul>
-                                      
-
-                                        <span id="myOverlay" class="overlay overlay_home1">
-                                       
-                                          <span class="closebtn" id="btnclose" title="Close Overlay" style="z-index:9999999;">x</span>
-                                        <span class="overlay-content">
-
-                                    
-
-                                             <div class="row" >
-                                             <!-- con espacio                                         -->
-                                             <!-- <div class="row" style="margin-top:100px;">  -->
-                              <div class="col-md-8 order-md-1">
-                              <div>
-                              <div class="logo">
-                            <a routerLink="">
-                                <img alt="image" src="assets/images/white-logo.png" >
-                            </a>
-                            
-                        </div>
-                                <h1 style="color:white; ">Cart summary</h1>
-                              </div>
-<div  style="color:black;text-align:left;border-radius:12px;" >
-  <ul class="list-group borderless col-md-12 offset-md-2" style="background-color:white;box-shadow:5px 0px 17px 5px rgba(44, 50, 50, 4.14);padding-left:12px;border-radius:12px;">
-  <li class="list-group-item borderless" *ngFor="let product of _car.car; let i = index " style="padding-left:12px;" >
-    <div style="min-height:35px;">
-    
-      <!-- <button type="button" class="rbutton"> -->
-      <i class="fa fa-trash pull-right" style="font-color:red;color:red; font-size:31px;"  (click)="saludo()" ></i>
-      <!-- </button> -->
-
-      <h4 > {{product.productName}}</h4>    
-    </div>
-    <ul class="list-group">
-      <li class="list-group-item borderless" *ngFor="let item of product.itemsPrices; let j = index" >
-        {{item.label}} Quantity: {{_car.car[i].quan[j]}}
-      </li>  
-    </ul>
-
-  </li>
- 
-</ul>
-</div>                              
-
-</div>
-<div class="col-md-4 order-md-2 mb-4">
-
-</div>
-<div class="checkout" style="display: block;box-shadow:5px 0px 17px 5px rgba(44, 50, 50, 2.14);">
-    <span class="fa fa-check puls"></span>
-</div>
-<!--   <div class="row">
-    <div class="col-md-6">
-     <div class="icon">
-    <mat-icon [inline]="true">shopping_cart</mat-icon>
-  </div>
-      <img  alt="image" src="assets/images/flogo.png" >
-    </div>
-     <div class="col-md-6">
-     <span style="font-family:moderna;">
-     Your are {{this._car.size}} tixs on car 
-     </span>
-    <button type="button" class="btn btn-success">checkout!</button>
-    </div>
-  </div>
- -->
-
-
-
-
-
- <!--  <mat-list  role="list"  >
-    <mat-list-item role="listitem"  *ngFor="let product of _car.car; let i = index " >
-        <img matListAvatar src="{{product.image}}" alt="...">
-      <h4 mat-line> {{product.productName}} . . .</h4>
-      <p mat-line>  
-        <span>
-          <mat-divider></mat-divider>
-          <mat-list class="my-list-1" role="list">
-            <mat-list-item  role="listitem"  class="mat-list-item2" *ngFor="let item of product.itemsPrices; let j = index">{{item.label}} Quantity: {{_car.car[i].quan[j]}}
-            </mat-list-item>
-         
-
-          </mat-list>
-
-        </span>
-      </p>
-    </mat-list-item> 
-   </mat-list> -->
- 
-
-                                                 
-
-
-
-
-
-
-                                        <!--     <mat-vertical-stepper [linear]="isLinear" #stepper>
-                                                <mat-step [stepControl]="firstFormGroup">
-                                                <form [formGroup]="firstFormGroup">
-                                                  <ng-template matStepLabel>Your tixs</ng-template>
-                                                  <mat-form-field>
-                                                    <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
-                                                  </mat-form-field>
-                                                  <div>
-                                                    <button mat-button matStepperNext>Next</button>
-                                                  </div>
-                                                </form>
-                                              </mat-step>
-                                              <mat-step [stepControl]="secondFormGroup">
-                                                <form [formGroup]="secondFormGroup">
-                                                  <ng-template matStepLabel>Fill out your address</ng-template>
-                                                  <mat-form-field>
-                                                    <input matInput placeholder="Address" formControlName="secondCtrl" required>
-                                                  </mat-form-field>
-                                                  <div>
-                                                    <button mat-button matStepperPrevious>Back</button>
-                                                    <button mat-button matStepperNext>Next</button>
-                                                  </div>
-                                                </form>
-                                              </mat-step>
-                                              <mat-step>
-                                                <ng-template matStepLabel>Done</ng-template>
-                                                You are now done.
-                                                <div>
-                                                  <button mat-button matStepperPrevious>Back</button>
-                                                  <button mat-button (click)="stepper.reset()">Reset</button>
-                                                </div>
-                                              </mat-step>
-                                            </mat-vertical-stepper> -->
-                                            </div>
-                                              <!-- <button type="submit"><i class="fa fa-search"></i></button> -->
-                                           
-                                          </span>
-                                        </span>
-                                    </ul>
-                            </div>
-                                <div class="navbar-header">
-                                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-
-                                        <span class="sr-only"></span>
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                    </button>
-                                </div>
-                                <div class="navbar-collapse collapse no-padding">
-
-                                    <ul class="nav navbar-nav navbar-left">
-                               
-                                          <li  class="dropdown "><a   style="font-family:moderna;" routerLink="about">About</a></li>
-                                     
-                                          <li  class="dropdown "><a  style="font-family:moderna;" routerLink="contact" >Contact</a></li>
-                                   
-                                        
-                                    </ul>
-                                    
-                                </div>                            
-                            </div>
-                        </div>
-                        <!-- END MENU DESIGN AREA -->
-                    </div>
-                </div>
+    <div class="header-top-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5  ">
+            <div class="logo" style="vertical-align:middle;">
+              <a routerLink="">
+                <img alt="image" src="assets/images/white-logo.png" >
+              </a>
+              <a href="#myCar" class="popup-with-zoom-anim" id="opencar" style="color:#fff;" >
+                <mat-icon matBadge="{{this._car.size}}" *ngIf="this._car.size>0 " matBadgeColor="warn" style="vertical-align:middle;" class="avatar">shopping_cart</mat-icon>
+              </a>
+            </div> 
+          </div>              
+          <div class="col-md-7">         
+            <div class="header_top">
+              <div class="col-md-12">    
+                <div class="pull-right">
+                  <a href="#">Login /</a><a href="https://www.thetixsapp.com" target="_blank">Register</a>
+                </div> 
+              </div>
             </div>
+            <div class="clearfix"></div>
+            <div class="mainmenu">
+              <div class="navbar navbar-nobg">
+                <div class="navbar-header">
+                  <ul>
+                    <span id="myOverlay" class="overlay overlay_home1" style="background-image: repeating-linear-gradient(162deg, rgb(0, 177, 218) 0%, rgb(49, 41, 166) 100%);">
+                      <span class="closebtn" id="btnclose" title="Close Overlay" style="z-index:9999999;color:black;font-color:black">x</span>
+                        <span class="overlay-content">                               
+                        <div class="row">                     
+                          <div class="col-md-8 order-md-1">
+                            <div style="padding-top:7%;">
+                              <div class="logo" >
+                                <a routerLink="">
+                                  <img alt="image" src="assets/images/white-logo.png" >
+                                </a>  
+                              </div>
+                              <h1 style="color:white;text-shadow: 0px 3px 0px #020a0f1a, 10px 8px 10px rgba(0, 0, 0, 0.47), 10px 8px 9px rgba(0,0,0,0.1), 0px 24px 30px rgba(0,0,0,0.1);">Cart summary</h1>
+                            </div>
+                            <div  style="color:black;text-align:left;border-radius:7px;background-color:white;  " >
+                              <!-- LISTADO -->
+                              <ul class="list-group borderless col-md-12 offset-md-2" style="background-color:white;box-shadow:9px 21px 20px 5px rgba(44, 50, 50, 0.61);padding-left:7px;border-radius:7px;">
+                                <li class="list-group-item borderless" *ngFor="let product of _car.car; let i = index " style="padding-left:7px;" >
+                                  <div style="min-height:35px;">
+                                    <i class="fa fa-trash pull-right" style="font-color:red;color:red; font-size:31px;"  (click)="saludo()" ></i>
+                                    <h4 > {{product.productName}}</h4>    
+                                  </div>
+                                  <ul class="list-group">
+                                    <li class="list-group-item borderless" *ngFor="let item of product.itemsPrices; let j = index" >
+                                      {{item.label}}<span class="qty"> Qty:</span> <span class="qtyN"> {{item.quan}}</span>
+                                    </li>  
+                                  </ul>
+                                </li>                           
+                              </ul>
+                              <!-- FIN LISTADO  -->
+<!--                               <mat-list style="background-color:white;"style="background-color:white;box-shadow:9px 21px 20px 5px rgba(44, 50, 50, 0.61);padding-left:7px;border-radius:7px;">
+                                <mat-list-item *ngFor="let product of _car.car; let i = index">
+                                  <mat-icon mat-list-icon>folder</mat-icon>
+                                  <h4 mat-line>{{product.productName}}</h4>
+                                   <mat-list-item *ngFor="let item of product.itemsPrices; let j = index">
+                   
+                                    <h4 mat-line>{{item.label}}</h4>
+                                    <p mat-line>  <span class="qty"> Qty:</span> 
+                                    <span class="qtyN"> {{item.quan}}</span> 
+                                    </p>
+                                 </mat-list-item>
+                                </mat-list-item>
+                                <mat-divider></mat-divider>
+                                                        </mat-list> -->
+
+
+                            </div>                              
+                          </div>
+                          <div class="col-md-4 order-md-2 mb-4">
+                          </div>
+                          <div class="checkout" style="display: block;box-shadow:5px 0px 17px 5px rgba(44, 50, 50, 0.4);">
+                            <span class="fa  fa-angle-right puls"></span>
+                          </div>
+                        </div>
+                      </span>
+                    </span>
+                  </ul>
+                </div>                    
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                </div>
+                <div class="navbar-collapse collapse no-padding">
+                  <ul class="nav navbar-nav navbar-left">
+                    <li  class="dropdown ">
+                      <a   style="font-family:moderna;" routerLink="about">About</a>
+                    </li>
+                    <li  class="dropdown ">
+                      <a  style="font-family:moderna;" routerLink="contact" >Contact</a>
+                    </li>                        
+                  </ul>  
+                </div>                            
+              </div>
+            </div>      
+          </div>
         </div>
-    </header>
+      </div>
+    </div>
+  </header>
    

@@ -9,7 +9,7 @@
                     jsFileLocation: "revolution/js/",
                     sliderLayout: "fullscreen",
                     dottedOverlay: "none",
-                    delay: 1500,
+                    delay: 2000,
                     navigation: {
                         keyboardNavigation: "on",
                         keyboard_direction: "horizontal",
@@ -36,7 +36,7 @@
                             }
                         },
                         bullets: {
-                            enable: true,
+                            enable: false,
                             hide_onmobile: false,
                             style: "hermes",
                             hide_onleave: false,
