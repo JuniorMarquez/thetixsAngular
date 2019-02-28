@@ -61,7 +61,7 @@ export class AllProductsComponent {
     	});
 	    dialogRef.afterClosed().subscribe(result => {
       		this.product = result;
-      		//console.log('The dialog was closed'+this.product]);
+      		console.log('The dialog was closed'+this.product);
       		this._ca.car=this.car;
       		this._ca.size=this.car.length;
       		//console.log("Producto: "+this.car[0].productName+" 1er label : "+this.car[0].itemsPrices[0].label+" 1er price: "+this.car[0].quan[0]);
@@ -109,7 +109,14 @@ export class AllProductsComponent {
 export class DialogOverviewExampleDialog {
  	quan: any = {};
 	tix:any[]=[];
-  product:any[]=[];
+  productToAdd:{
+    productName:string,
+    itemsPrices:{
+      label:string;
+      price:number;
+    }
+    quan:{};
+  }
   	constructor(
     public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,@Inject(MAT_DIALOG_DATA) public data: DialogData, public _pi:ProductInfoService) {
   		this.ini();
@@ -123,22 +130,27 @@ export class DialogOverviewExampleDialog {
 	changeAdd(item,i): void{
 		this.quan[i]=this.quan[i]+1;
 		// console.log( "indice: "+i +" Valor:" +this.quan[i]);
-	  item.quan=this.quan[i];    
+	  //item.quan=this.quan[i];    
   }
 	changeRemove(item,i): void{
 		if (this.quan[i]>0){
 		  this.quan[i]=this.quan[i]-1;
 		  //console.log( "indice: "+i +" Valor:" +this.quan[i]);
-		  item.quan=this.quan[i];
+		  //item.quan=this.quan[i];
     }
 	}
   onNoClick(): void {
     this.dialogRef.close();
+
   }
   ok(): void {
-   	//this.data.product=this.product;
-    //this.product=this.data.product;
-   	this.data.car.push(this.data.product);
+    this.data.product.quan=this.quan;
+    this.productToAdd=this.data.product;  
+    this.data.car.push({
+        productName:this.productToAdd.productName,
+        itemsPrices:this.productToAdd.itemsPrices,
+        quan:this.productToAdd.quan
+        });
     this.dialogRef.close();
   }
 }

@@ -34,8 +34,9 @@ export class HeaderComponent  implements OnInit {
   constructor(private _formBuilder: FormBuilder,public _car:CarService) {
     this.saludo
   }
-  saludo(): void {
-    alert("hola");
+  saludo(i): void {
+    this._car.car.splice(i,1);
+    this._car.size=this._car.car.length;
 
 }  
   ngOnInit() {

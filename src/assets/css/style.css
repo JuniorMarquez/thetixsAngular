@@ -4592,7 +4592,8 @@ p.content {
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #323559;
+  background-color: rgba(18,18,30,.96);
+  /*background-color: #323559; azul oscuro  */
   /*background-color: #74d4d3;*/
   overflow-y: scroll;
   ::-webkit-scrollbar-track {background: transparent};

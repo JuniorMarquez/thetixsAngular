@@ -26,8 +26,8 @@
               <div class="navbar navbar-nobg">
                 <div class="navbar-header">
                   <ul>
-                    <span id="myOverlay" class="overlay overlay_home1" style="background-image: repeating-linear-gradient(162deg, rgb(0, 177, 218) 0%, rgb(49, 41, 166) 100%);">
-                      <span class="closebtn" id="btnclose" title="Close Overlay" style="z-index:9999999;color:black;font-color:black">x</span>
+                    <span id="myOverlay" class="overlay overlay_home1" style="backgoung-color:rgba(18,18,30,.96)  ;">
+                      <span class="closebtn" id="btnclose"  style="z-index:9999999;">x</span>
                         <span class="overlay-content">                               
                         <div class="row">                     
                           <div class="col-md-8 order-md-1">
@@ -44,12 +44,12 @@
                               <ul class="list-group borderless col-md-12 offset-md-2" style="background-color:white;box-shadow:9px 21px 20px 5px rgba(44, 50, 50, 0.61);padding-left:7px;border-radius:7px;">
                                 <li class="list-group-item borderless" *ngFor="let product of _car.car; let i = index " style="padding-left:7px;" >
                                   <div style="min-height:35px;">
-                                    <i class="fa fa-trash pull-right" style="font-color:red;color:red; font-size:31px;"  (click)="saludo()" ></i>
+                                    <i class="fa fa-trash pull-right" style="font-color:red;color:red; font-size:31px;"  (click)="saludo(i)" ></i>
                                     <h4 > {{product.productName}}</h4>    
                                   </div>
                                   <ul class="list-group">
                                     <li class="list-group-item borderless" *ngFor="let item of product.itemsPrices; let j = index" >
-                                      {{item.label}}<span class="qty"> Qty:</span> <span class="qtyN"> {{item.quan}}</span>
+                                      {{item.label}}<span class="qty"> Qty:</span> <span class="qtyN"> {{_car.car[i].quan[j]}}</span>
                                     </li>  
                                   </ul>
                                 </li>                           

@@ -1,0 +1,3 @@
+rm -R /var/www/html/newAn
+cp -R dist/thetixs /var/www/html/newAn
+chmod 7777 -R /var/www/html/newAn
